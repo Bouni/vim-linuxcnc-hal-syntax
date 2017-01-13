@@ -7,7 +7,7 @@ The installation guide text was get from http://wiki.linuxcnc.org/cgi-bin/wiki.p
 **Author** Pavel Ruban http://pavelruban.org
 
 **Screenshot**
-https://github.com/pavelruban-org/vim-linuxcnc-hal-syntax/blob/master/screenshot.png
+![alt_tag](https://github.com/pavelruban-org/vim-linuxcnc-hal-syntax/blob/master/screenshot.png)
 
 **Installation**
 
