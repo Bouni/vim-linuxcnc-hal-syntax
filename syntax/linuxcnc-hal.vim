@@ -8,12 +8,13 @@ if exists("b:current_syntax")
     finish
 endif
 
-syn case ignore
+"syn case ignore
 
-:syntax match halConstant /0x[0-9A-f]*\|\-\=[.0-9]*/
+:syntax match iniConstant /[A-Z_]\{2,}[0-9]\?/
+:syntax match halConstant /0x[0-9A-f]*\|\([a-zA-Z._0-9]\)\@<!-\?\d\+/
 :syntax match halSignal /\v(net)@<=(\s|\t)*[^ \t]+>/
 :syntax match halThread /\(base-thread\)\|\(slow-thread\)/
-:syntax keyword halOperator addf loadrt setp sets net
+:syntax keyword halOperator addf loadrt setp sets net newsig
 :syntax match halSigDir /\v(\=\>|\<\=|\<\=\>)/
 :syntax match halComment /^#.*$/
 :syntax match halFunction /\<step\>/
