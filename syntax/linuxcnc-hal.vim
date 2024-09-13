@@ -1,7 +1,8 @@
 " Vim syntax file
 " Language: LinuxCNC HAL
-" Maintainer: Pavel Ruban <apps.pavelruban@gmail.com>
-" Last Change: 2016 Aug 08
+" Original Maintainer: Pavel Ruban <apps.pavelruban@gmail.com>
+" Adated and modified: Bouni <bouni-github@owee.de>
+" Last Change: 2024.09.13
 
 " Quit when a (custom syntax file was already loaded
 if exists("b:current_syntax")
@@ -11,14 +12,14 @@ endif
 "syn case ignore
 
 :syntax match iniConstant /\(\.\)\@<![A-Z]_\?[0-9]\?/
+:syntax match halFunction /[a-zA-Z0-9\-]\+\.[^ ]*/
 :syntax match halConstant /0x[0-9A-f]*\|\([a-zA-Z._0-9]\)\@<!-\?\d\+/
-:syntax match halSignal /\v(net)@<=(\s|\t)*[^ \t]+>/
-:syntax match halThread /\(base-thread\)\|\(slow-thread\)/
-:syntax keyword halOperator addf loadrt setp sets net newsig
+:syntax match halSignal /\v(net|sets)@<=(\s|\t)*[^ \t]+>/
+:syntax match halThread /\w\+-thread/
+:syntax keyword halOperator addf loadrt setp sets net newsig loadusr
 :syntax match halSigDir /\v(\=\>|\<\=|\<\=\>)/
 :syntax match halComment /^#.*$/
 :syntax match halFunction /\<step\>/
-:syntax match halComponent /\vstepgen|pwmgen|parport|hal_parport|trivkins|probe_parport|axis|joint|motion/
 :syntax match halFunction /make-pulses/
 :syntax match halFunction /motion-command-handler/
 :syntax match halFunction /motion-controller/
@@ -44,8 +45,8 @@ endif
 :syntax match halFunction /\<maxaccel\>/
 :syntax match halFunction /\<motor-pos-cmd\>/
 :syntax match halFunction /\<position-scale\>/
-:syntax match halComponent /\<iocontrol\>/
 
+:highlight link iniConstant Type
 :highlight link halConstant Constant
 :highlight link halOperator Operator
 :highlight link halComment Comment
@@ -65,10 +66,11 @@ endif
 :highlight link halPrint SpecialComment
 :highlight link halDebug Debug
 :highlight link halGCodes Keyword
-:highlight link halThread Keyword
+:highlight link halThread Special
 :highlight link halMUserCodes Keyword
 :highlight link halAxes SpecialChar
 :highlight link halSpecials SpecialChar
 :highlight link halFeed SpecialChar
 :highlight link halTool SpecialChar
-
+:highlight link halSigDir SpecialChar
+:highlight halSignal term=bold ctermfg=LightMagenta gui=bold guifg=#9dd274 cterm=bold
