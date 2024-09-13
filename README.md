@@ -4,10 +4,10 @@ As I had search for such file to configure LinuxCNC and didn't find it on the WE
 
 The installation guide text was get from http://wiki.linuxcnc.org/cgi-bin/wiki.pl?Highlighting_In_Vim
 
-**Author** Pavel Ruban http://pavelruban.org
+**Original Author** Pavel Ruban http://pavelruban.org
 
 **Screenshot**
-![alt_tag](https://github.com/pavelruban-org/vim-linuxcnc-hal-syntax/blob/master/screenshot.png)
+![alt_tag](https://github.com/bouni/vim-linuxcnc-hal-syntax/blob/master/screenshot.png)
 
 **Installation**
 
