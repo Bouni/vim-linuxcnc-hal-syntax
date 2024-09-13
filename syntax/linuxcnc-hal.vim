@@ -17,6 +17,7 @@ endif
 :syntax match halSignal /\v(net|sets)@<=(\s|\t)*[^ \t]+>/
 :syntax match halThread /\w\+-thread/
 :syntax keyword halOperator addf loadrt setp sets net newsig loadusr
+:syntax match loadrtArguments /\v(loadrt)@<=(\s|\t)[a-z0-9-= ]+$>/
 :syntax match halSigDir /\v(\=\>|\<\=|\<\=\>)/
 :syntax match halComment /^#.*$/
 :syntax match halFunction /\<step\>/
@@ -74,3 +75,4 @@ endif
 :highlight link halTool SpecialChar
 :highlight link halSigDir SpecialChar
 :highlight halSignal term=bold ctermfg=LightMagenta gui=bold guifg=#9dd274 cterm=bold
+:highlight link loadrtArguments Constant
